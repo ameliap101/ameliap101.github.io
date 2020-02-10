@@ -5,6 +5,7 @@
 // Scene where you can interact with character
 
 let currentScene = 0;
+let starX,starY;
 function setup() {
   createCanvas(windowWidth, windowHeight);
 x = width/4;
@@ -13,17 +14,24 @@ y = height/4;
 
 function draw() {
   background(52, 235, 204);
-  scene();
+  if (currentScene === 0)  scene();
+  else nextScene();
   character();
+  //arrowKey();
 }
 
 function keyPressed(){
   if (keyIsPressed === true){
     if (keyCode === LEFT_ARROW){
-      if(currentScene===0) currentScene=1;
+      currentScene = 1 ;
+      starX = random(10,200);
+      starY = random(10,200);
     }
   else if (keyCode === RIGHT_ARROW){
-    nextScene();
+    currentScene = 0;
+  }
+  else {
+    currentScene = 0;
   }
   }
 }
@@ -67,4 +75,8 @@ function nextScene(){
   fill(38, 110, 41);
   rect(0,(windowHeight/5)*4,windowWidth, windowHeight);
   character();
+  fill(250);
+  ellipse(starX,starY,30,30);
+  ellipse(starX,starY,30,30);
+  text('Amelia Pilon',50,750);
 }
