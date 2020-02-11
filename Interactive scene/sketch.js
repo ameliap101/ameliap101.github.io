@@ -86,7 +86,7 @@ function nextScene(){
   character();
   fill(250);
   ellipse(starX,starY,30,30);
-  ellipse(starX2,starY2,30,30);
+  ellipse(starX2,starY2,30,30); 
   ellipse(starX3,starY3,30,30);
   ellipse(starX4,starY4,30,30);
   text('Amelia Pilon',50,750);
