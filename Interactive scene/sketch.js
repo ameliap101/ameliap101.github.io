@@ -6,6 +6,9 @@
 
 let currentScene = 0;
 let starX,starY;
+let starX2,starY2;
+let starX3,starY3;
+let starX4,starY4;
 function setup() {
   createCanvas(windowWidth, windowHeight);
 x = width/4;
@@ -24,8 +27,14 @@ function keyPressed(){
   if (keyIsPressed === true){
     if (keyCode === LEFT_ARROW){
       currentScene = 1 ;
-      starX = random(10,200);
+      starX = random(10,windowWidth);
       starY = random(10,200);
+      starX2 = random(10,windowWidth);
+      starY2 = random(30,600);
+      starX3 = random(10,windowWidth);
+      starY3 = random(30,600);
+      starX4 = random(10,windowWidth);
+      starY4 = random(30,600);
     }
   else if (keyCode === RIGHT_ARROW){
     currentScene = 0;
@@ -77,6 +86,8 @@ function nextScene(){
   character();
   fill(250);
   ellipse(starX,starY,30,30);
-  ellipse(starX,starY,30,30);
+  ellipse(starX2,starY2,30,30);
+  ellipse(starX3,starY3,30,30);
+  ellipse(starX4,starY4,30,30);
   text('Amelia Pilon',50,750);
 }
