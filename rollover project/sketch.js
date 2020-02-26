@@ -3,12 +3,11 @@
 // Feb. 24th
 //
 // - describe what you did to take this project "above and beyond"
-let onTopLeft, onTopRight, onBottomLeft,onBottomRight; //boolean state variable
-
-let q1Fade = 255;
-let q2Fade = 255;
-let q3Fade = 255;
-let q4Fade = 255;
+let quad = 0;
+let q1Fade = 0;
+let q2Fade = 0;
+let q3Fade = 0;
+let q4Fade = 0;
 
 let FADE_SPEED = 2;
 
@@ -17,14 +16,10 @@ function setup() {
 }
 
 function cursorSide(){
-  if(mouseX === width/2 && height){
-    onTopLeft = true;
-    onTopRight = false;
+  if(mouseX<width/2 && mouseY > height/2){
+    quad = 1;
   }
-  else{
-    onTopLeft = false;
-    onTopRight = true;
-  }
+  else if(mouseX>width/2,0,width/2,height/2);)
 }
 
 
@@ -38,7 +33,7 @@ function renderRectangles(){
 }
 
 function draw(){
-  background(220);
+  background(255);
   cursorSide();
   renderRectangles();
   
