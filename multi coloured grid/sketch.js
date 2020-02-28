@@ -6,26 +6,35 @@ let gridSpacing = 30;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  rectMode(CENTER);
+  windowResized();
+  rectGrid();
+
 }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
+function mouseClicked() {
+ windowResized();
+  rectGrid();
+  if (keyIsDown(SHIFT) && gridSpacing!=100){
+    gridSpacing +=1;
+  }
+  else if (gridSpacing != 10 ) {
+    gridSpacing -= 1;
+  }
+}
 function rectGrid() {
-  windowResized();
-  for (let y = gridSpacing / 2; y <= windowHeight; y += gridSpacing) {
-    for (let x = gridSpacing / 2; x <= windowWidth; x += gridSpacing){
-      fill(random(1,255),random(1,255),random(1,255));
-      rect(x,y,gridSpacing,gridSpacing);
-      
+  for (let y = 0; y <= windowHeight; y += gridSpacing) {
+    for (let x = 0; x <= windowWidth; x += gridSpacing) {
+      fill(random(1, 255), random(1, 255), random(1, 255));
+      if (x + gridSpacing <= width && y + gridSpacing <= height) {
+        rect(x, y, gridSpacing, gridSpacing);
+      }
     }
   }
 }
 
 function draw() {
-  background(220);
-  windowResized();
-  rectGrid();
 }
