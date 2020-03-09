@@ -11,12 +11,12 @@ function setup() {
 
 }
 
-function windowResized() {
+function windowResized() {  // resets the screen
   resizeCanvas(windowWidth, windowHeight);
 }
 
 function mouseClicked() {
- windowResized();
+  windowResized();
   rectGrid();
   if (keyIsDown(SHIFT) && gridSpacing!=100){
     gridSpacing +=1;
