@@ -1,23 +1,27 @@
-// Project Title
-// Your Name
-// Date
-//
-// Extra for Experts:
-// - describe what you did to take this project "above and beyond"
-ringSize = 400;
+
+const GRID_SPACE = 75;
+
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-}
-function draw() {
-  background(240);
-  drawCircle();
+  createCanvas(600, 600);
 }
 
-function drawCircle(){
-  ringSize = 400;
-  for(let i = 0;i<10;i++){
-    ellipse(width/2,height/2,ringSize,ringSize);
-    ringSize-=40;
+function draw() {
+  squares();
+}
+
+function squares() {
+  for (let x = 0; x < 600; x += GRID_SPACE) {
+    for (let y = 0; y < 600; y += GRID_SPACE) {
+      if (x % 2 === 1 && y % 2 === 1) {
+        fill(255);
+      }
+      else if (x % 2 === 0 && y % 2 === 0) {
+        fill(255);
+      }
+      else {
+        fill(0);
+      }
+      rect(x, y, GRID_SPACE, GRID_SPACE);
+    }
   }
 }
-
