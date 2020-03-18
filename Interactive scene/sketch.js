@@ -20,21 +20,21 @@ function draw() {
   if (currentScene === 0)  scene();
   else nextScene();
   character();
-  //arrowKey();
+   
 }
 
-function keyPressed(){
+function keyPressed(){//when the left arrow key is pressed it turns the scene into night with stars
   if (keyIsPressed === true){
     if (keyCode === LEFT_ARROW){
       currentScene = 1 ;
-      starX = random(10,windowWidth);
-      starY = random(10,200);
+      starX = random(10,windowWidth);// making the stars appear in random spots 
+      starY = random(10,400);
       starX2 = random(10,windowWidth);
-      starY2 = random(30,600);
+      starY2 = random(30,400);
       starX3 = random(10,windowWidth);
-      starY3 = random(30,600);
+      starY3 = random(30,400);
       starX4 = random(10,windowWidth);
-      starY4 = random(30,600);
+      starY4 = random(30,400);
     }
   else if (keyCode === RIGHT_ARROW){
     currentScene = 0;
@@ -60,9 +60,8 @@ function scene(){
   fill(230, 226, 44);
   ellipse(100,100,200,200);//sun
   fill(0);
-  textSize(25);
-  
-  text('Amelia Pilon',50,750);
+  textSize(25);// My name
+  text("Amelia Pilon",110,550);//
 }
 
 function character(){
@@ -79,15 +78,17 @@ function character(){
   fill(230, 208, 87);
   ellipse(mouseX, mouseY,40, 130);//body base 
 }
-function nextScene(){
+function nextScene(){//night scene
   background(9, 44, 71);
   fill(38, 110, 41);
   rect(0,(windowHeight/5)*4,windowWidth, windowHeight);
   character();
   fill(250);
-  ellipse(starX,starY,30,30);
+  ellipse(starX,starY,30,30);// making the stars
   ellipse(starX2,starY2,30,30); 
   ellipse(starX3,starY3,30,30);
   ellipse(starX4,starY4,30,30);
-  text('Amelia Pilon',50,750);
+  fill(0);
+  textSize(25);//my name
+  text('Amelia Pilon',110,550);//
 }
